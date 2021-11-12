@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import LocationsPage from './LocationsPage';
+import App from './App';
 
 ReactDOM.render(
   <React.StrictMode>
-    <LocationsPage />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
