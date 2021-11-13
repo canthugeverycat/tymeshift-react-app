@@ -22,8 +22,8 @@ export const fontSizes = {
 };
 
 export const colors = {
-    primary: '#001122',
-    secondary: '#37B24D'
+    dark: 'rgba(0, 17, 34, 0.8)',
+    grey: 'rgba(0, 17, 34, 0.3)'
 };
 
 export const fontWeights = {
