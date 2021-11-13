@@ -4,5 +4,5 @@ import { Container } from './index';
 export default styled(Container)`
     display: flex;
     flex-direction: ${({ direction }) => direction || 'dark' };
-    padding: ${({ padding }) => padding || '0' }
+    padding: ${({ padding }) => padding || '0' };
 `;

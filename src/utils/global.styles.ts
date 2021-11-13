@@ -23,7 +23,8 @@ export const fontSizes = {
 
 export const colors = {
     dark: 'rgba(0, 17, 34, 0.8)',
-    grey: 'rgba(0, 17, 34, 0.3)'
+    grey: 'rgba(0, 17, 34, 0.3)',
+    lightGrey: '#EEEEEE'
 };
 
 export const fontWeights = {
