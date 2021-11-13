@@ -1,12 +1,12 @@
 import React from 'react';
-import Icon from './components/Icon';
 
-const App = () => {
+import { GlobalStyles } from './utils/global.styles';
+
+const App: React.FC = () => {
   return (
-    <div className="Page-Locations">
-      <Icon type="Close" />
-      <Icon type="Edit" />
-    </div>
+    <>
+      <GlobalStyles />
+    </>
   );
 }
 
