@@ -28,10 +28,10 @@ export default styled(Icon)`
             border-radius: 50%;
             left: -6px;
             top: -6px;
+            cursor: pointer;
         }
 
         &:hover:before {
-            cursor: pointer;
             animation: ${pulseAnimation} 2s infinite;
         }
     `}

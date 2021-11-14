@@ -3,29 +3,24 @@ import Moment from 'react-moment';
 import Text from '../Text/styles';
 import Icon from '../Icon/styles';
 
-type Location = {
-    id: string,
-    createdAt: string,
-    name: string,
-    userCount: number,
-    description: string
-}
+import { Location } from '../../mock/data';
 
 interface Props {
     className?: string;
     data: Location;
-    showDetails?: boolean
+    onEditClick: (data: Location) => void;
 };
 
 export const Card:React.FC <Props> = ({
     className,
-    data: {
+    data,
+    onEditClick
+}) => {
+    const {
         createdAt,
         name,
         userCount,
-    },
-    showDetails
-}) => {
+    } = data;
     return (
         <div className={className}>
             <Text size="large" weight="700" margin="0 0 10px 0">{name}</Text>
@@ -42,7 +37,7 @@ export const Card:React.FC <Props> = ({
                 0 Views
             </Text>
 
-            {!showDetails && <Icon className="IconEdit" type="Edit" onClick={() => { console.log('clicked')}} />}
+            <Icon className="IconEdit" type="Edit" onClick={() => { onEditClick(data) }} />
         </div>
     )
 };

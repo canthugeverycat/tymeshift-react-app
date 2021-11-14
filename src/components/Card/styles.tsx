@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { Card } from './index';
 import { colors } from '../../utils/global.styles';
 
@@ -13,14 +13,12 @@ export default styled(Card)`
     border-radius: 2px;
     outline: 1px solid ${colors.grey};
 
-    ${({ showDetails }) => !showDetails && css`
-        & .IconEdit {
-            display: none;
-            position: absolute;
-            top: 13px;
-            right: 13px;
-        }
-    `}
+    & .IconEdit {
+        display: none;
+        position: absolute;
+        top: 13px;
+        right: 13px;
+    }
 
     &:hover {
         background-color: ${colors.grey};

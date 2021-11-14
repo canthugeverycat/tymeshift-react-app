@@ -1,4 +1,4 @@
-type Location = {
+export type Location = {
     id: string,
     createdAt: string,
     name: string,
@@ -6,7 +6,7 @@ type Location = {
     description: string
 }
 
-const data: Location[] = [
+export const data: Location[] = [
     {
         id: '1',
         createdAt: '2021-03-05T09:10:35.462Z',
@@ -60,5 +60,3 @@ const data: Location[] = [
         description: 'matrix Heard Island and McDonald Islands'
     }
 ];
-
-export default data;
