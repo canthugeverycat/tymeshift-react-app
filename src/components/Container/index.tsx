@@ -8,6 +8,6 @@ interface Props {
 
 export const Container:React.FC <Props> = ({ className, children }) => {
     return (
-       <p className={className}>{children}</p>
+       <div className={className}>{children}</div>
     )
 };

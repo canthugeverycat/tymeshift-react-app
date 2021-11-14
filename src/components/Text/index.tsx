@@ -1,11 +1,12 @@
 import React from 'react';
-import { colors, fontSizes, fontWeights } from '../../utils/global.styles';
+import { colors, fontSizes } from '../../utils/global.styles';
 
 interface Props {
     className?: string;
     color?: keyof typeof colors;
     size?: keyof typeof fontSizes;
-    weight?: keyof typeof fontWeights;
+    weight?: string;
+    margin?: string;
 };
 
 export const Text:React.FC <Props> = ({ className, children }) => {

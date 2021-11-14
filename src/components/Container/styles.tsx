@@ -3,6 +3,7 @@ import { Container } from './index';
 
 export default styled(Container)`
     display: flex;
-    flex-direction: ${({ direction }) => direction || 'dark' };
+    flex-wrap: wrap;
+    flex-direction: ${({ direction }) => direction || 'row' };
     padding: ${({ padding }) => padding || '0' };
 `;

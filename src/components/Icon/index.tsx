@@ -1,5 +1,4 @@
-import { FunctionComponent } from 'react';
-import styled from 'styled-components';
+import React, { MouseEvent } from 'react';
 
 import Close from './svg/Close.svg';
 import Edit from './svg/Edit.svg';
@@ -7,7 +6,13 @@ import Timezone from './svg/Timezone.svg';
 import Users from './svg/Users.svg';
 import Views from './svg/Views.svg';
 
-import { Props } from './index.types';
+interface Props {
+    className?: string,
+    type: string,
+    size?: string
+    margin?: string,
+    onClick?: (e: MouseEvent) => void;
+}
 
 const Icons: any = {
     Close,
@@ -17,17 +22,11 @@ const Icons: any = {
     Views
 };
 
-const Img = styled.img`
-    height: 14px;
-    width: 14px;
-`;
-
-const Icon: FunctionComponent<Props> = ({ type }) => (
-    <Img
-        className="Icon"
-        src={Icons[type]}
-        alt={type}
-    />
+export const Icon: React.FC<Props> = ({ className, type, onClick }) => (
+    <i className={className} onClick={onClick}>
+        <img
+            src={Icons[type]}
+            alt={type}
+        />
+    </i>
 );
-
-export default Icon;

@@ -22,14 +22,9 @@ export const fontSizes = {
 };
 
 export const colors = {
-    dark: 'rgba(0, 17, 34, 0.8)',
-    grey: 'rgba(0, 17, 34, 0.3)',
-    lightGrey: '#EEEEEE'
-};
-
-export const fontWeights = {
-    light: 400,
-    regular: 500,
-    semibold: 600,
-    bold: 700
+    white: '#FFF',
+    darkText: 'rgba(0, 17, 34, 0.8)',
+    lightText: 'rgba(0, 17, 34, 0.3)',
+    grey: '#EEEEEE',
+    lightGrey: 'rgba(246, 246, 246, 0.2)'
 };
