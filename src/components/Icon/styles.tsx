@@ -6,29 +6,33 @@ import { Props } from './types';
 
 export const StyledIcon = styled.i<Props>`
     display: flex;
-    margin-right: 5px;
     position: relative;
+    margin-right: 5px;
 
     & > img {
-        pointer-events: none;
-        z-index: 1;
-        opacity: 0.3;
         height: ${({ size }) => size || '14px' };
         width: ${({ size }) => size || '14px' };
+        
+        opacity: 0.3;
+        z-index: 1;
+        pointer-events: none;
     }
 
     ${({ onClick }) => onClick && css`
         &:before {
             content: "";
             display: inline-block;
+            position: absolute;
+            left: -6px;
+            top: -6px;
             height: 100%;
             width: 100%;
             padding: 6px;
+            
             background: ${colors.white};
-            position: absolute;
+            
             border-radius: 50%;
-            left: -6px;
-            top: -6px;
+
             cursor: pointer;
         }
 

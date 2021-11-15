@@ -6,12 +6,15 @@ import { Props } from './types';
 
 export const StyledButton = styled.button<Props>`
     display: inline-block;
+    padding: 9px 15px;
+
+    background-color: ${({ color }) => colors[color]};
     color: ${colors.white};
     font-weight: 600;
-    padding: 9px 15px;
+
     border-radius: 16px;
-    background-color: ${({ color }) => colors[color]};
     border: none;
+
     cursor: pointer;
 
     &:hover {

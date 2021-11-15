@@ -3,30 +3,35 @@ import styled from 'styled-components';
 import { colors } from '../../styleUtils/variables.styles';
 
 export const StyledBackdrop = styled.div`
+    display: flex;
+    position: fixed;
     width: 100%;
     height: 100%;
-    z-index: 2;
-    background: ${colors.black};
-    opacity: 0.6;
-    position: fixed;
-    display: flex;
     justify-content: center;
     align-items: center;
+
+    background: ${colors.black};
+
+    z-index: 2;
+    opacity: 0.6;
 `;
 
 export const StyledModal = styled.div`
-    width: 440px;
-    padding: 16px 25px 0 25px;
-    background: ${colors.white};
     display: flex;
-    flex-direction: column;
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    flex-direction: column;
+    width: 440px;
+    padding: 16px 25px 0 25px;
+
+    background: ${colors.white};
+    
     border-radius: 2px;
-    box-shadow: 0px 8px 16px -4px rgba(0,17,34,0.2);
+
     z-index: 2;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 8px 16px -4px rgba(0,17,34,0.2);
 
     .Modal-Header {
         display: flex;

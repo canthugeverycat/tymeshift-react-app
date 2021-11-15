@@ -1,16 +1,17 @@
 import styled from 'styled-components';
 
 import { colors } from '../../styleUtils/variables.styles';
-import { Props } from './types';
 
-export const StyledCard = styled.div<Props>`
-    display: flex;
+export const StyledCard = styled.div`
     position: relative;
+    display: flex;
     flex-direction: column;
     flex: 0 0 calc(20% - 25px);
     margin: 12.5px;
     padding: 15px 25px;
+
     background-color: ${colors.lightGrey};
+
     border-radius: 2px;
     outline: 1px solid ${colors.grey};
 

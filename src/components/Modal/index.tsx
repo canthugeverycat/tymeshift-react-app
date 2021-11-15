@@ -12,7 +12,7 @@ import {
 } from './styles';
 import { Props } from './types';
 
-const Modal: React.FC<Props> = ({ className, show, setShowModal, data }) => {
+const Modal: React.FC<Props> = ({ show, setShowModal, data }) => {
 
     const handleKeyPress = useCallback(
         (e) => {
@@ -48,12 +48,12 @@ const Modal: React.FC<Props> = ({ className, show, setShowModal, data }) => {
         <>
             <StyledBackdrop onClick={closeModal} />
 
-            <StyledModal className={className}>
+            <StyledModal>
                 <StyledModalHeader>
                     <Text size="large" weight="700">
                         {name}
                     </Text>
-                    <Icon className="IconClose" type="Close" onClick={closeModal} />
+                    <Icon type="Close" onClick={closeModal} />
                 </StyledModalHeader>
 
                 <Text margin="5px 0">
