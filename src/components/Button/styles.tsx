@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colors } from '../../utils/global.styles';
+import { colors } from '../../utils/variables.styles';
 import { pulseAnimationGreen } from '../../utils/animations.styles';
 import { Props } from './types';
 

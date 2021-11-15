@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { colors } from '../../utils/global.styles';
+import { colors } from '../../utils/variables.styles';
 
 import { Props } from './types';
 
