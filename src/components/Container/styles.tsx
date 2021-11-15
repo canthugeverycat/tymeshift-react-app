@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import { Props } from './types';
 
 export const StyledContainer = styled.div<Props>`

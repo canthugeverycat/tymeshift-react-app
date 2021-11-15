@@ -1,15 +1,18 @@
 import React, { useCallback, useEffect } from 'react';
 import Moment from 'react-moment';
 
-import { StyledBackdrop } from './styles';
 import Text from '../Text';
 import Icon from '../Icon';
 import Button from '../Button';
-
-import { StyledModal, StyledModalHeader, StyledModalFooter } from './styles';
+import {
+    StyledBackdrop,
+    StyledModal,
+    StyledModalHeader,
+    StyledModalFooter
+} from './styles';
 import { Props } from './types';
 
-const Modal:React.FC<Props> = ({ className, show, setShowModal, data }) => {
+const Modal: React.FC<Props> = ({ className, show, setShowModal, data }) => {
 
     const onKeyPress = useCallback(
         (e) => {
@@ -33,15 +36,10 @@ const Modal:React.FC<Props> = ({ className, show, setShowModal, data }) => {
         return null;
     }
 
-    const {
-        name,
-        userCount,
-        createdAt,
-        description
-    } = data;
+    const { name, userCount, createdAt, description } = data;
 
     const closeModal = () => {
-        setShowModal(false)
+        setShowModal(false);
     };
 
     return (
@@ -50,7 +48,9 @@ const Modal:React.FC<Props> = ({ className, show, setShowModal, data }) => {
 
             <StyledModal className={className}>
                 <StyledModalHeader>
-                    <Text size="large" weight="700">{name}</Text>
+                    <Text size="large" weight="700">
+                        {name}
+                    </Text>
                     <Icon className="IconClose" type="Close" onClick={closeModal} />
                 </StyledModalHeader>
 
@@ -60,13 +60,17 @@ const Modal:React.FC<Props> = ({ className, show, setShowModal, data }) => {
                 </Text>
                 <Text margin="5px 0">
                     <Icon type="Timezone" />
-                    <Moment local format="HH:mm [(GMT]Z[)]">{createdAt}</Moment>
+                    <Moment local format="HH:mm [(GMT]Z[)]">
+                        {createdAt}
+                    </Moment>
                 </Text>
                 <Text margin="5px 0">
                     <Icon type="Views" />
                     0 Views
                 </Text>
-                <Text margin="20px 0 5px 0" weight="600">Description</Text>
+                <Text margin="20px 0 5px 0" weight="600">
+                    Description
+                </Text>
                 <Text margin="5px 0" weight="400">
                     {description}
                 </Text>

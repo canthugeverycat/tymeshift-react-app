@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import { colors } from '../../utils/variables.styles';
 
 export const StyledBackdrop = styled.div`

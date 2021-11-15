@@ -9,34 +9,48 @@ import Modal from './components/Modal';
 import { data, Location } from './mock/data';
 
 const App: React.FC = () => {
-  const [showModal, setShowModal] = useState(false);
-  const [selectedLocation, setSelectedLocation] = useState<Location | null>(null);
+    const [showModal, setShowModal] = useState(false);
+    const [selectedLocation, setSelectedLocation] = useState<Location | null>(
+        null
+    );
 
-  const openModal = (data: Location) => {
-    setShowModal(prev => !prev)
-    setSelectedLocation(data);
-  };
+    const openModal = (data: Location) => {
+        setShowModal(true);
+        setSelectedLocation(data);
+    };
 
-  return (
-    <>
-      <GlobalStyles />
+    return (
+      <>
+        <GlobalStyles />
 
-      <Modal show={showModal} setShowModal={setShowModal} data={selectedLocation} />
+        <Modal
+          show={showModal}
+          setShowModal={setShowModal}
+          data={selectedLocation}
+        />
 
-      <Container direction="column" padding="20px 30px" >
-        <Text color="lightText" weight="700" margin="0 0 12px 0">All locations</Text>
-        <Text size="extraLarge" weight="600">Fake locations</Text>
-      </Container>
+        <Container direction="column" padding="20px 30px">
+          <Text color="lightText" weight="700" margin="0 0 12px 0">
+            All locations
+          </Text>
+          <Text size="extraLarge" weight="600">
+            Fake locations
+          </Text>
+        </Container>
 
-      <Separator />
+        <Separator />
 
-      <Container padding="12.5px 0 12.5px 47.5px">
-        {data.map((location) => (
-          <Card key={location.id} data={location} onEditClick={openModal} />
-        ))}
-      </Container>
-    </>
-  );
-}
+        <Container padding="12.5px 0 12.5px 47.5px">
+          {data.map((location) => (
+            <Card
+              key={location.id}
+              data={location}
+              onEditClick={openModal}
+            />
+          ))}
+        </Container>
+      </>
+    );
+};
 
 export default App;
