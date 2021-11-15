@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Moment from 'react-moment';
 
 import Text from '../Text';
@@ -9,14 +9,15 @@ import { Props } from './types';
 const Card: React.FC<Props> = (props) => {
 	const { data, handleOpenModal } = props;
 	const { name, createdAt, userCount } = data;
-
+	
 	const [views, setViews] = useState(0);
 
-	useEffect(() => {
-		if (views) {
-			handleOpenModal({ ...data, views });
-		}
-	}, [views]);
+	const openModal = () => {
+		const nextViews = views + 1;
+		setViews(nextViews);
+		handleOpenModal({ ...data, views: nextViews });
+	};
+
 
 	const viewsLabel = `${views} View${views !== 1 ? 's' : ''}`;
 
@@ -44,7 +45,7 @@ const Card: React.FC<Props> = (props) => {
 			<Icon
 				className="IconEdit"
 				type="Edit"
-				onClick={() => setViews((prev) => prev + 1)}
+				onClick={openModal}
 			/>
 		</StyledCard>
 	);
