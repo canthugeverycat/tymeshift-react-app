@@ -41,3 +41,17 @@ export const StyledModal = styled.div`
         padding: 10px 0;
     }
 `;
+
+export const StyledModalHeader = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+`;
+
+export const StyledModalFooter = styled.div`
+    display: flex;
+    justify-content: end;
+    margin-top: 15px;
+    padding: 10px 0;
+`;
