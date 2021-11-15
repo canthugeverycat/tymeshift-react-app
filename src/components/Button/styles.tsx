@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-import { Button } from './index';
 import { colors } from '../../utils/global.styles';
 import { pulseAnimationGreen } from '../../utils/animations.styles';
+import { Props } from './types';
 
-export default styled(Button)`
+export const StyledButton = styled.button<Props>`
     display: inline-block;
     color: ${colors.white};
     font-weight: 600;

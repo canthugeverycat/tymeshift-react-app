@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { Card } from './index';
 import { colors } from '../../utils/global.styles';
+import { Props } from './types';
 
-export default styled(Card)`
+export const StyledCard = styled.div<Props>`
     display: flex;
     position: relative;
     flex-direction: column;

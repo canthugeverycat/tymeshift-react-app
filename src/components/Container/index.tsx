@@ -1,13 +1,10 @@
 import React from 'react';
 
-interface Props {
-    className?: string;
-    direction?: string;
-    padding?: string;
-};
+import { StyledContainer } from './styles';
+import { Props } from './types';
 
-export const Container:React.FC <Props> = ({ className, children }) => {
-    return (
-       <div className={className}>{children}</div>
-    )
-};
+const Container:React.FC<Props> = ({ children, ...props }) => (
+    <StyledContainer {...props}>{children}</StyledContainer>
+);
+
+export default Container;

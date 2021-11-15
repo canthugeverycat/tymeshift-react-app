@@ -1,15 +1,10 @@
-import React, { MouseEvent } from 'react';
+import React from 'react';
 
-import { colors } from '../../utils/global.styles';
+import { StyledButton } from './styles';
+import { Props } from './types';
 
-interface Props {
-    className?: string;
-    onClick?: (e: MouseEvent) => void;
-    color: keyof typeof colors;
-};
+const Button:React.FC<Props> = ({ children, ...props }) => (
+   <StyledButton {...props}>{children}</StyledButton>
+);
 
-export const Button:React.FC <Props> = ({ className, onClick, children }) => {
-    return (
-       <button className={className} onClick={onClick}>{children}</button>
-    )
-};
+export default Button;

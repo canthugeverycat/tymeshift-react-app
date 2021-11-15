@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 
 import { GlobalStyles } from './utils/global.styles';
-import Container from './components/Container/styles';
-import Separator from './components/Separator/styles';
-import Text from './components/Text/styles';
-import Card from './components/Card/styles';
-import { Modal } from './components/Modal/styles';
+import Container from './components/Container';
+import Separator from './components/Separator';
+import Text from './components/Text';
+import Card from './components/Card';
+import Modal from './components/Modal';
 import { data, Location } from './mock/data';
 
 const App: React.FC = () => {

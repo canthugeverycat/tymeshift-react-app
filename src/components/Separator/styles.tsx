@@ -1,8 +1,10 @@
 import styled from 'styled-components';
-import { Separator } from './index';
+
 import { colors } from '../../utils/global.styles';
 
-export default styled(Separator)`
+import { Props } from './types';
+
+export const StyledSeparator = styled.div<Props>`
     display: block;
     margin: ${({ margin }) => margin || '0' };
     background-color: ${colors.grey};

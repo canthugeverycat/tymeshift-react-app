@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { Container } from './index';
+import { Props } from './types';
 
-export default styled(Container)`
+export const StyledContainer = styled.div<Props>`
     display: flex;
     flex-wrap: wrap;
     flex-direction: ${({ direction }) => direction || 'row' };

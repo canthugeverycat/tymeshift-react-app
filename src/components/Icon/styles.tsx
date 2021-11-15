@@ -1,9 +1,9 @@
 import styled, {css} from 'styled-components';
-import { Icon } from './index';
 import { colors } from '../../utils/global.styles';
 import { pulseAnimation } from '../../utils/animations.styles';
+import { Props } from './types';
 
-export default styled(Icon)`
+export const StyledIcon = styled.i<Props>`
     display: flex;
     margin-right: 5px;
     position: relative;

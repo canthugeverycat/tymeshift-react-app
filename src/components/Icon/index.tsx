@@ -1,4 +1,4 @@
-import React, { MouseEvent } from 'react';
+import React from 'react';
 
 import Close from './svg/Close.svg';
 import Edit from './svg/Edit.svg';
@@ -6,13 +6,8 @@ import Timezone from './svg/Timezone.svg';
 import Users from './svg/Users.svg';
 import Views from './svg/Views.svg';
 
-interface Props {
-    className?: string,
-    type: string,
-    size?: string
-    margin?: string,
-    onClick?: (e: MouseEvent) => void;
-}
+import { StyledIcon } from './styles';
+import { Props } from './types';
 
 const Icons: any = {
     Close,
@@ -22,11 +17,17 @@ const Icons: any = {
     Views
 };
 
-export const Icon: React.FC<Props> = ({ className, type, onClick }) => (
-    <i className={className} onClick={onClick}>
-        <img
-            src={Icons[type]}
-            alt={type}
-        />
-    </i>
-);
+const Icon: React.FC<Props> = (props) => {
+    const { type } = props;
+
+    return (
+        <StyledIcon {...props}>
+            <img
+                src={Icons[type]}
+                alt={type}
+            />
+        </StyledIcon>
+    );
+};
+
+export default Icon;

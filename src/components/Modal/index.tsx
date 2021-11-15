@@ -1,20 +1,15 @@
 import React from 'react';
 import Moment from 'react-moment';
 
-import { Location } from '../../mock/data';
-import { ModalBackdrop } from './styles';
-import Text from '../Text/styles';
-import Icon from '../Icon/styles';
-import Button from '../Button/styles';
+import { StyledBackdrop } from './styles';
+import Text from '../Text';
+import Icon from '../Icon';
+import Button from '../Button';
 
-interface Props {
-    className?: string;
-    show: boolean;
-    data: Location | null;
-    setShowModal: React.Dispatch<React.SetStateAction<boolean>>
-};
+import { StyledModal } from './styles';
+import { Props } from './types';
 
-export const Modal:React.FC<Props> = ({ className, show, setShowModal, data }) => {
+const Modal:React.FC<Props> = ({ className, show, setShowModal, data }) => {
     if (!show || data === null) {
         return null;
     }
@@ -32,9 +27,9 @@ export const Modal:React.FC<Props> = ({ className, show, setShowModal, data }) =
 
     return (
         <>
-            <ModalBackdrop onClick={closeModal} />
+            <StyledBackdrop onClick={closeModal} />
 
-            <div className={className}>
+            <StyledModal className={className}>
                 <div className="Modal-Header">
                     <Text size="large" weight="700">{name}</Text>
                     <Icon className="IconClose" type="Close" onClick={closeModal} />
@@ -61,7 +56,9 @@ export const Modal:React.FC<Props> = ({ className, show, setShowModal, data }) =
                         Done
                     </Button>
                 </div>
-            </div>
+            </StyledModal>
         </>
     );
 }
+
+export default Modal;

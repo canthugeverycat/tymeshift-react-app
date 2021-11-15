@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 import { colors } from '../../utils/global.styles';
-import { Modal as ModalComponent } from './index';
 
-export const ModalBackdrop = styled.div`
+export const StyledBackdrop = styled.div`
     width: 100%;
     height: 100%;
     z-index: 2;
@@ -14,7 +13,7 @@ export const ModalBackdrop = styled.div`
     align-items: center;
 `;
 
-export const Modal = styled(ModalComponent)`
+export const StyledModal = styled.div`
     width: 440px;
     padding: 16px 25px 0 25px;
     background: ${colors.white};

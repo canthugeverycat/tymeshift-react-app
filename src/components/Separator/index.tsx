@@ -1,14 +1,10 @@
 import React from 'react';
 
-interface Props {
-    className?: string;
-    direction?: 'horizonal' | 'vertical';
-    margin?: string;
-    length?: string;
-};
+import { StyledSeparator } from './styles';
+import { Props } from './types';
 
-export const Separator:React.FC <Props> = ({ className, children }) => {
-    return (
-       <div className={className}>{children}</div>
-    )
-};
+const Separator:React.FC<Props> = ({ children, ...props }) => (
+    <StyledSeparator {...props}>{children}</StyledSeparator>
+);
+
+export default Separator;

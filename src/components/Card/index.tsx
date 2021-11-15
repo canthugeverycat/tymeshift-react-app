@@ -1,28 +1,17 @@
 import React from 'react';
 import Moment from 'react-moment';
-import Text from '../Text/styles';
-import Icon from '../Icon/styles';
+import Text from '../Text';
+import Icon from '../Icon';
+import { StyledCard } from './styles';
 
-import { Location } from '../../mock/data';
+import { Props } from './types';
 
-interface Props {
-    className?: string;
-    data: Location;
-    onEditClick: (data: Location) => void;
-};
+const Card:React.FC<Props> = (props) => {
+    const { data, onEditClick } = props;
+    const { name, createdAt, userCount } = data;
 
-export const Card:React.FC <Props> = ({
-    className,
-    data,
-    onEditClick
-}) => {
-    const {
-        createdAt,
-        name,
-        userCount,
-    } = data;
     return (
-        <div className={className}>
+        <StyledCard {...props}>
             <Text size="large" weight="700" margin="0 0 10px 0">{name}</Text>
             <Text margin="5px 0">
                 <Icon type="Users" />
@@ -38,6 +27,8 @@ export const Card:React.FC <Props> = ({
             </Text>
 
             <Icon className="IconEdit" type="Edit" onClick={() => { onEditClick(data) }} />
-        </div>
+        </StyledCard>
     )
 };
+
+export default Card;

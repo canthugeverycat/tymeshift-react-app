@@ -1,8 +1,9 @@
 import styled from 'styled-components';
-import { Text } from './index';
 import { fontSizes, colors } from '../../utils/global.styles';
 
-export default styled(Text)`
+import { Props } from './types';
+
+export const StyledText = styled.p<Props>`
     display: flex;
     align-items: center;
     color: ${({ color }) => colors[color || 'darkText'] };
