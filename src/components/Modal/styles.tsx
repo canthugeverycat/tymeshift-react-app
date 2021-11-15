@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { colors } from '../../utils/variables.styles';
+import { colors } from '../../styleUtils/variables.styles';
 
 export const StyledBackdrop = styled.div`
     width: 100%;

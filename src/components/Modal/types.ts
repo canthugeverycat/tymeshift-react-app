@@ -1,4 +1,4 @@
-import { Location } from '../../mock/data';
+import { Location } from '../../types';
 
 export interface Props {
     className?: string;

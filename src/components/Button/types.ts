@@ -1,6 +1,6 @@
 import { MouseEvent } from 'react';
 
-import { colors } from '../../utils/variables.styles';
+import { colors } from '../../styleUtils/variables.styles';
 
 export interface Props {
 	className?: string;

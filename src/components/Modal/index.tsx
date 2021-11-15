@@ -14,7 +14,7 @@ import { Props } from './types';
 
 const Modal: React.FC<Props> = ({ className, show, setShowModal, data }) => {
 
-    const onKeyPress = useCallback(
+    const handleKeyPress = useCallback(
         (e) => {
             if (e === 'Escape' && show) {
                 setShowModal(false);
@@ -25,22 +25,24 @@ const Modal: React.FC<Props> = ({ className, show, setShowModal, data }) => {
 
     useEffect(
         () => {
-            document.addEventListener('keydown', onKeyPress);
+            document.addEventListener('keydown', handleKeyPress);
 
-            return () => document.removeEventListener('keydown', onKeyPress);
+            return () => document.removeEventListener('keydown', handleKeyPress);
         },
-        [onKeyPress]
+        [handleKeyPress]
     );
 
     if (!show || data === null) {
         return null;
     }
 
-    const { name, userCount, createdAt, description } = data;
+    const { name, userCount, createdAt, views, description } = data;
 
     const closeModal = () => {
         setShowModal(false);
     };
+
+    const viewsLabel = `${views} View${views !== 1 ? 's' : ''}`;
 
     return (
         <>
@@ -66,7 +68,7 @@ const Modal: React.FC<Props> = ({ className, show, setShowModal, data }) => {
                 </Text>
                 <Text margin="5px 0">
                     <Icon type="Views" />
-                    0 Views
+                    {viewsLabel}
                 </Text>
                 <Text margin="20px 0 5px 0" weight="600">
                     Description

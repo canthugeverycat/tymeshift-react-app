@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { fontSizes, colors } from '../../utils/variables.styles';
+import { fontSizes, colors } from '../../styleUtils/variables.styles';
 import { Props } from './types';
 
 export const StyledText = styled.p<Props>`

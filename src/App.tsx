@@ -1,15 +1,16 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
-import { GlobalStyles } from './utils/global.styles';
+import { GlobalStyles } from './styleUtils/global.styles';
 import Container from './components/Container';
 import Separator from './components/Separator';
 import Text from './components/Text';
 import Card from './components/Card';
 import Modal from './components/Modal';
-import { data, Location } from './mock/data';
+import { Location } from './types';
 
 const App: React.FC = () => {
     const [showModal, setShowModal] = useState(false);
+    const [locations, setLocations] = useState<Location[]>([]);
     const [selectedLocation, setSelectedLocation] = useState<Location | null>(
         null
     );
@@ -18,6 +19,22 @@ const App: React.FC = () => {
         setShowModal(true);
         setSelectedLocation(data);
     };
+
+    useEffect(() => {
+        const url = 'https://6033c4d8843b15001793194e.mockapi.io/api/locations';
+
+        const fetchData = async () => {
+            try {
+                const response = await fetch(url);
+                const data: Location[] = await response.json();
+                setLocations(data);
+            } catch (error) {
+                console.error('Error while fetching data:', error);
+            }
+        };
+
+        fetchData();
+    }, []);
 
     return (
       <>
@@ -41,11 +58,11 @@ const App: React.FC = () => {
         <Separator />
 
         <Container padding="12.5px 0 12.5px 47.5px">
-          {data.map((location) => (
+          {locations.map((location) => (
             <Card
               key={location.id}
               data={location}
-              onEditClick={openModal}
+              handleOpenModal={openModal}
             />
           ))}
         </Container>

@@ -1,7 +1,7 @@
 import styled, {css} from 'styled-components';
 
-import { colors } from '../../utils/variables.styles';
-import { pulseAnimation } from '../../utils/animations.styles';
+import { colors } from '../../styleUtils/variables.styles';
+import { pulseAnimation } from '../../styleUtils/animations.styles';
 import { Props } from './types';
 
 export const StyledIcon = styled.i<Props>`

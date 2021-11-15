@@ -1,4 +1,4 @@
-import { colors, fontSizes } from '../../utils/variables.styles';
+import { colors, fontSizes } from '../../styleUtils/variables.styles';
 
 export interface Props {
     className?: string;

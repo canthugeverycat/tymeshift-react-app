@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { colors } from '../../utils/variables.styles';
+import { colors } from '../../styleUtils/variables.styles';
 import { Props } from './types';
 
 export const StyledSeparator = styled.div<Props>`
